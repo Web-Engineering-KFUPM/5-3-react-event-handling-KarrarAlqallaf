@@ -16,12 +16,12 @@ export default function TaskApp() {
 
 
   const handleDelete = (id) => {
-    // TODO: filter tasks by id to remove the clicked one
+    setTasks((prev) => prev.filter((t) => t.id !== id));
   };
 
   
   const handleClearAll = () => {
-    // TODO: set tasks to empty array
+    setTasks([]);
   };
 
   return (
@@ -50,7 +50,7 @@ export default function TaskApp() {
 
       {/*Render Task List and Enable Delete */}
       {/*Pass tasks and onDelete */}
-      <TaskList tasks={tasks} /* onDelete={handleDelete} */ />
+      <TaskList tasks={tasks} onDelete={handleDelete} />
 
       {/*Clear All */}
       <div className="footerRow">
